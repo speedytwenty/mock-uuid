@@ -1,4 +1,4 @@
-import { mockUuid } from "../src";
+import { mockUuid, v2, v3, v4, v5 } from "../src";
 import { validate } from "uuid";
 
 describe("Mock UUID tests", () => {
@@ -6,6 +6,7 @@ describe("Mock UUID tests", () => {
     let errorCount = 0;
     for (let i = 0; i < 1e3; i++) {
       errorCount += validate(mockUuid.get(i)) ? 0 : 1;
+      errorCount += validate(v4()) ? 0 : 1;
     }
     expect(errorCount).toBe(0);
   });
@@ -61,5 +62,12 @@ describe("Mock UUID tests", () => {
   test("MockUUID.getIncrementalGenerator incremention make unique uuids", () => {
     const generator = mockUuid.getIncrementalGenerator();
     expect(generator() === generator()).toBeFalsy();
+  });
+
+  test("v4-import make unique uuids", () => {
+    expect(v2() === v2()).toBeFalsy();
+    expect(v3() === v3()).toBeFalsy();
+    expect(v4() === v4()).toBeFalsy();
+    expect(v5() === v5()).toBeFalsy();
   });
 });

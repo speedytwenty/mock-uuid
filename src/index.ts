@@ -39,3 +39,13 @@ export class mockUuid {
       .toString(16)
       .padStart(length, "0");
 }
+
+let v2Index = 0;
+let v3Index = 0;
+let v4Index = 0;
+let v5Index = 0;
+
+export const v2 = () => mockUuid.get(v2Index++, Math.E, 2);
+export const v3 = () => mockUuid.get(v3Index++, Math.E, 3);
+export const v4 = () => mockUuid.get(v4Index++, Math.E, 4);
+export const v5 = () => mockUuid.get(v5Index++, Math.E, 5);
