@@ -1,9 +1,9 @@
 {
   "name": "mock-uuid",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Repeatable and predictable mock UUID generator for testing purposes.",
-  "main": "lib/src/index.js",
-  "typings": "lib/src/index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "github.com:nkholski/mock-uuid"
